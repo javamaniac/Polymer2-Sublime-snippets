@@ -10,21 +10,23 @@ A comment describing this element
 
 Example:
 
-    <my-elem></my-elem>
+    <${1:htmlElement}></${1:htmlElement}>
 
 -->
-<dom-module id="$1">
+<dom-module id="${1:htmlElement}">
 	<template>
 		<style>
 			:host {
 				display: block;
 			}
 		</style>
-		$3
+
+		$0
+
 	</template>
 	<script>
-    class $2 extends Polymer.GestureEventListeners(Polymer.Element) {
-      static get is () { return '$1' }
+    class ${2:className} extends Polymer.GestureEventListeners(Polymer.Element) {
+      static get is () { return '${1:htmlElement}' }
 
       static get properties () {
         return {
@@ -36,7 +38,7 @@ Example:
       }
 		}
 
-		window.customElements.define($2.is, $2)
+		window.customElements.define(${2:className}.is, ${2:className})
 	</script>
 </dom-module>
 ]]></content>
